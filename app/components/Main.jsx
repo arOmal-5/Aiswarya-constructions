@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import logo from '../../public/logo.png'
-import img from '../../public/Assets/cover.jpg'
+import img from '../../public/Assets/bg.png'
 import './main.css'
 import {Pacifico} from "next/font/google";
 import { TiThMenu } from "react-icons/ti";

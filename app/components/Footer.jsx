@@ -5,7 +5,6 @@ import instagramicon from '../../public/Assets/instagram.svg'
 import Image from 'next/image'
 import logo from '../../public/logo.png'
 
-
 const Footer = () => {
 
   const whatsAppNumber = '9633985683'; // Replace with your WhatsApp number in international format
@@ -40,6 +39,8 @@ const Footer = () => {
           <p> 695541</p>
           <p>9633985683
           ,9447439742</p>
+
+
           </div>
           </div>
         </div>
@@ -47,7 +48,7 @@ const Footer = () => {
         <div className='contact md:w-2/6 flex flex-col justify-center items-center'>
           <p>Contact us through</p>
 
-   <div className='flex justify-center items-center'>
+   <div className='flex justify-center gap-2 items-center'>
    <a href={whatsAppLink} target="_blank" rel="noopener noreferrer">
       <button className="text-white font-bold py-2 px-4 rounded">
         <Image src={watspicon}/>
@@ -60,11 +61,21 @@ const Footer = () => {
       <Image src={instagramicon} className='w-8'/>
       </button>
     </a>
+
+              
    </div>
+
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d493.10818040469906!2d77.00219136809264!3d8.60891508614461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05b8068ee6acc3%3A0x59f20d40587b3890!2sAiswarya%20Constructions!5e0!3m2!1sen!2sin!4v1718369697369!5m2!1sen!2sin"
+    width="350" 
+    height="150"
+     allowfullscreen="" 
+  className='border rounded-2xl'
+     loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     
        
         </div>
+
 
         <div className=' md:w-2/6 px-4 md:px-0'>
        
@@ -78,7 +89,7 @@ const Footer = () => {
       <input class="border py-2 px-3 text-grey-darkest" type="text" name="first_name" id="first_name" required />
     </div>
     <div class="flex flex-col mb-4" >
-      <label class="mb-2 uppercase font-bold text-base text-grey-darkest" for="number">Contact no*</label>
+      <label class="mb-2 uppercase font-bold text-base text-grey-darkest" for="number">Contact no *</label>
       <input class="border py-2 px-3 text-grey-darkest" type="number" name="email" id="email" required />
     </div>
     </div>
