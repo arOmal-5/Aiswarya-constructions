@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import btn5 from '../../public/Assets/btn5.png'
 import './part1.css'
+import { motion } from "framer-motion"
 
 const Part1 = () => {
   return (
@@ -9,6 +10,9 @@ const Part1 = () => {
 
 
     <div className=''>
+
+
+
 
         <div className='nextmove flex mt-10 flex-col gap-4 justify-center items-center'>
         <h1 className='md:text-2xl'>WHAT'S YOUR NEXT MOVE ?</h1>

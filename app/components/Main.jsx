@@ -7,6 +7,7 @@ import img from '../../public/Assets/bg.png'
 import './main.css'
 import {Pacifico} from "next/font/google";
 import { TiThMenu } from "react-icons/ti";
+import { useSpring, animated } from '@react-spring/web'
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -16,6 +17,11 @@ const pacifico = Pacifico({
 });
 
 const Main = () => {
+
+  const springs = useSpring({
+    from: { x: 0 },
+    to: { x: 100 },
+  })
 
   const [scrolling, setScrolling] = useState(false);
 
@@ -81,7 +87,9 @@ const Main = () => {
 
 
 
-     <div  style={{backgroundImage:`url(${img.src})`, backgroundSize:'cover', backgroundRepeat:'no-repeat', opacity:'0.9' }}>
+     <div 
+     className='bg-cover' style={{backgroundImage:`url(${img.src})`, backgroundRepeat:'no-repeat', opacity:'0.9' }}>
+
 
 
 <div className={scrolling ? 'navbar-scrolled' : 'navbar'}>
@@ -125,6 +133,18 @@ const Main = () => {
      
  
      </div>
+     {/* <animated.div
+  style={{
+    width: 100,
+    height: 80,
+    borderRadius: 8,
+
+    color:'white',
+    ...springs,
+  }}
+>
+  <p>since 2000</p>
+</animated.div> */}
  
    
 </div>
