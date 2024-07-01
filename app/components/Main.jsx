@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
-import logo from '../../public/logo.png'
+
 import img from '../../public/Assets/bg.png'
 import './main.css'
 import {Pacifico} from "next/font/google";
-import { TiThMenu } from "react-icons/ti";
+
 import { useSpring, animated } from '@react-spring/web'
 
 const pacifico = Pacifico({
@@ -23,11 +23,11 @@ const Main = () => {
     to: { x: 100 },
   })
 
-  const [scrolling, setScrolling] = useState(false);
+
 
   const [text, setText] = useState('build');
 
-  const [isChecked, setIsChecked] = useState(false);
+
 
   useEffect(() => {
     const imageContainer = document.querySelector('.image-container');
@@ -60,27 +60,13 @@ const Main = () => {
   }, [text]);
 
 
-  useEffect(() => {
-    const toggleButton = document.getElementById('toggle');
-    toggleButton.addEventListener('click', () => {
-      setIsChecked(!isChecked);
-    });
-  }, [isChecked]);
 
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+
+
   
 
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
-    }
-  };
+ 
 
   return (
     <>
@@ -92,33 +78,7 @@ const Main = () => {
 
 
 
-<div className={scrolling ? 'navbar-scrolled' : 'navbar'}>
-<div>
-<Image  src={logo} alt="Image" 
-      className="w-20rem  drop-shadow-2xl drop" 
-     style={{width:'7rem', opacity:'1'}} />
-</div>
-<button
-        className={`md:hidden block w-8 h-8  rounded-full ${isChecked? 'checked' : ''}`}
-        id="toggle"
-      >
-       <TiThMenu className='text-3xl' />
-      </button>
 
-<nav className='w-full'>
-     
-      <ul
-        className={`nav-items md:flex flex-col justify-evenly  w-full  items-center md:flex-row ${isChecked? 'phnnav' : 'hidden'}`}
-        id="nav-items"
-      >
-        <li className="li md:w-auto w-full text-center md:text-left">CONSTRUCTION</li>
-        <li className="li md:w-auto w-full text-center md:text-left">REAL ESTATE</li>
-        <li className="li md:w-auto w-full text-center md:text-left">ESTIMATE</li>
-        <li className="li md:w-auto w-full text-center md:text-left">CONSTRUCTION</li>
-        <li className="li md:w-auto w-full text-center md:text-left">SITE SURVEY</li>
-      </ul>
-    </nav>
-</div>
 
 <div className="image-container flex ">
 <div className=" flex  gap-3 text-white text-3xl md:text-6xl">

@@ -1,50 +1,6 @@
-.navbar {
-  background-color: rgba(0, 0, 0, 0.145);
-  height: 10rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  transition: background-color 0.3s; /* Add a transition effect */
-  font-family: Quattrocento;
-  color: white;
-}
-.navbar li:hover{
-  @apply cursor-pointer text-white transition ease-in;
-  color: re;
-}
-
-.li:hover {
-  background-color: rgba(255, 0, 0, 0.396);
-  border: 1px solid ;
-  border-radius: 8px;
-
-  
-}.phnnav{
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.145);
- 
-}
 
 
-.navbar-scrolled {
-  background-color: rgba(0, 0, 0, 0.918); /* Change the background color to full black */
-  height: 10rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  transition: background-color 0.3s; /* Add a transition effect */
-  font-family: Quattrocento;
-  color: white;
-  z-index: +1;
-}
+
 
 
 .image-container {
