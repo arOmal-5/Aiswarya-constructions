@@ -83,26 +83,28 @@ const Footer = () => {
         <div class="form bg-white text-xs md:w-5/6 ">
        <p className='py-2'> Have Questions? We'd love to help!</p>
   <form>
-    <div className='flex gap-4'>
-    <div class="flex flex-col mb-4">
-      <label class="mb-2 uppercase font-bold text-base text-grey-darkest" for="first_name"> Name *</label>
-      <input class="border py-2 px-3 text-grey-darkest" type="text" name="first_name" id="first_name" required />
-    </div>
-    <div class="flex flex-col mb-4" >
-      <label class="mb-2 uppercase font-bold text-base text-grey-darkest" for="number">Contact no *</label>
-      <input class="border py-2 px-3 text-grey-darkest" type="number" name="email" id="email" required />
-    </div>
+    <div className='flex gap-2'>
+    <div class="mb-5">
+    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
+    <input type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John Martin" required />
+  </div>
+  <div class="mb-5">
+    <label for="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Number</label>
+    <input type="number" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+91 6238739229" required />
+  </div>
     </div>
    
-    <div class="flex flex-col mb-4 ">
-      <label class="mb-2 uppercase font-bold text-base text-grey-darkest" for="message">Message *</label>
-      <textarea class="border py-2 px-3 text-grey-darkest" name="message" id="message" required></textarea>
-    </div>
+    
+
+  <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
+  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
+
+
     <button class="letstalkbtn" type="submit">Let's Talk</button>
   </form>
 </div>
 
-        <input type="text" />
+      
         </div>
       </div>
 
@@ -110,7 +112,7 @@ const Footer = () => {
   <p>
       © 2024 Aiswarya constructions, Privacy policy, Terms & Conditions
       </p>
-    <p>Construction Website Design by Aromal</p>
+    {/* <p>Construction Website Design by Aromal</p> */}
   </div>
       </div>
 

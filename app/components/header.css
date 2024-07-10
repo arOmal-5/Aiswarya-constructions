@@ -1,5 +1,5 @@
 .navbar {
-    height: 8rem;
+   
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -13,11 +13,55 @@
     z-index: +1;
   }
   .navbar li:hover{
-    @apply cursor-pointer text-white transition ease-in;
+     
+    @apply cursor-pointer transition ease-in ;
+    color: #d87748
    
   }
+
+  .navbar .signupinbtn:hover{
+
+    @apply text-slate-500
+  }
   
- 
+  .signup-modal {
+    transition: ease-in-out;
+    animation: modal-slide-down 0.5s;
+  }
+  
+  @keyframes modal-slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+.textarea{
+  color: #3d3d3d;
+    font-size: 0.9rem;
+    line-height: 1.4em;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: inherit;
+}
+
+ .navbar p{
+    color: #3d3d3d;
+    font-size: 12px;
+    line-height: 1em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'proxima-nova', sans-serif;
+    text-align: center;
+ }
    
 
   
