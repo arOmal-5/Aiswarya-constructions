@@ -44,9 +44,9 @@ const Part2 = () => {
     transform: showToast? 'translateY(0)' : 'translateY(-10px)', // toggle translate
     transition: 'opacity 0.5s, transform 0.5s' // transition effect
   }}
-  id="toast-notification" className={`w-full  top-0 max-w-xs p-2 text-white bg-black rounded-lg shadow dark:bg-gray-950 dark:text-gray-300 ${showToast? 'how' : ''}`} role="alert">
+  id="toast-notification" className={`w-full  top-0 max-w-xs p-2 text-whiterounded-lg backdrop-blur-md rounded-2xl shadow dark:bg-gray-950 dark:text-gray-300 ${showToast? 'how' : ''}`} role="alert">
     <div class="flex items-center mb-3">
-        <span class="mb-1 text-sm font-semibold text-white dark:text-white">New notification</span>
+        <span class="mb-1 text-sm font-semibold text-red-500 dark:text-red-400">New notification alert</span>
         <button
         onClick={() => setShowToast(false)}
          type="button" class="ms-auto -mx-1 -my-1.5  justify-center items-center flex-shrink-0 text-white hover:text-red-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-notification" aria-label="Close">
@@ -62,9 +62,9 @@ const Part2 = () => {
            
         
         </div>
-        <div class="ms-3 text-sm font-normal">
+        <div class="ms-3 text-sm font-normal textarea" >
           
-            <div class="text-sm font-normal">Your dream project is ready 
+            <div class="text-sm font-normal" style={{fontSize:'0.6rem'}}>Your dream project is ready 
               <br />
               Sounds good right !</div> 
             <span class="text-xs font-medium flex justify-center items-center text-blue-600 dark:text-blue-500">

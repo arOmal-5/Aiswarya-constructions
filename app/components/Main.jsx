@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 
-import img from '../../public/Assets/bg.png'
+import img from '../../public/Assets/mainbg1.jpg'
 import './main.css'
 import {Pacifico} from "next/font/google";
 
@@ -74,17 +74,17 @@ const Main = () => {
 
 
      <div 
-     className='bg-cover' style={{backgroundImage:`url(${img.src})`, backgroundRepeat:'no-repeat', opacity:'0.9' }}>
+     className=' sm:h-screen bg-cover bg-center bg-no-repeat h-96' style={{backgroundImage:`url(${img.src})` }}>
 
 
 
 
 
 <div className="image-container flex ">
-<div className=" flex  gap-3 text-white text-3xl md:text-6xl">
+<div className=" flex  gap-10 text-white text-3xl md:text-6xl  -mt-24 ">
       
       <span 
-      className='flex gap-4 font-semibold  font-mono'
+      className='flex gap-4 font-semibold'
       >WE  <p
   
       className={`${pacifico.className} animated-text`}>{text}</p> YOUR HOME

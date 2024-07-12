@@ -8,6 +8,8 @@ import Image from 'next/image';
 import  './header.css'
 import { FaHome } from "react-icons/fa";
 import { motion, useScroll } from "framer-motion"
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 
  
@@ -22,6 +24,9 @@ const Header = () => {
 
 
   const { scrollYProgress } = useScroll();
+
+
+
 
  
 
@@ -73,18 +78,22 @@ const Header = () => {
   <div className= 'navbar'>
 <div className='sm:flex flex  w-full justify-between px-10 items-center'>
 
+
 <button
 onClick={handleModalShow}
 className='signupinbtn gap-5 justify-center items-center hidden sm:flex'>
 <FaHome/> 
       <p> SIGN IN / SIGN UP</p>
      </button>
+
+
 {
   showModal && (
     
 
-<div id="authentication-modal" tabindex="-1" aria-hidden="true" className="overflow-hidden signup-modal overflow-y-auto overflow-x-hidden fixed right-0 left-72 z-50 flex justify-center items-center w-full md:inset-0">
-    <div class="relative w-full max-w-md max-h-full">
+<div
+ id="authentication-modal" tabindex="-1" aria-hidden="true" className="sm:overflow-hidden signup-modal sm:overflow-y-auto sm:overflow-x-hidden sm:fixed right-0 left-72 z-50 sm:flex sm:justify-center sm:items-center sm:w-full md:inset-0">
+    <div class="relative w-full max-w-md sm:max-h-full">
       
         {/* <!-- Modal content --> */}
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -127,7 +136,13 @@ className='signupinbtn gap-5 justify-center items-center hidden sm:flex'>
                     <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">SIGN IN</button>
                   
                 </form>
-                <button type="button" class="py-2.5 w-full px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ADMIN PANEL</button>
+
+                <Link href={'/admin-login'}>
+                <button
+                 onClick={handleModalClose}
+                  type="button" class="py-2.5 w-full px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ADMIN PANEL</button>
+                </Link>
+                
             </div>
 
             
@@ -199,7 +214,15 @@ className='signupinbtn gap-5 justify-center items-center hidden sm:flex'>
         <li className="li md:w-auto w-full text-center md:text-left">ESTIMATE</li>
         <li className="li md:w-auto w-full text-center md:text-left">CONSTRUCTION</li>
         <li className="li md:w-auto w-full text-center md:text-left">SITE SURVEY</li>
+        <button
+onClick={handleModalShow}
+className='signupinbtn gap-5 justify-center items-center block sm:hidden'>
+<FaHome/> 
+      <p> SIGN IN / SIGN UP</p>
+     </button>
       </ul>
+
+      
     </nav>
 </div>
 
