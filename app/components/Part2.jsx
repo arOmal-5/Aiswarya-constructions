@@ -6,6 +6,8 @@ import logo from '../../public/logo.png'
 import watspicon from '../../public/Assets/whatsappicon.svg'
 import { AnimatePresence, motion } from 'framer-motion';
 
+
+
 const Part2 = () => {
 
 
@@ -32,7 +34,7 @@ const Part2 = () => {
     <>
     <AnimatePresence></AnimatePresence>
     
-{
+{/* {
   showToast && (    
   <div 
   style={{
@@ -80,7 +82,7 @@ const Part2 = () => {
         </div>
     </div>
 </div>)
-}
+} */}
     
     
     </>

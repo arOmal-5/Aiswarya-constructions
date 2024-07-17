@@ -8,6 +8,7 @@ import './main.css'
 import {Pacifico} from "next/font/google";
 
 import { useSpring, animated } from '@react-spring/web'
+import { FloatingWhatsApp } from 'react-floating-whatsapp';
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -108,6 +109,22 @@ const Main = () => {
  
    
 </div>
+
+
+<div >
+<FloatingWhatsApp
+        phoneNumber="+9196339 85683"
+        accountName="Aiswarya constructions"
+        allowEsc
+        notification
+        notificationSound
+        statusMessage="online"
+        chatMessage="Hello welcome ! how can i help you ?"
+        avatar='https://t4.ftcdn.net/jpg/03/37/70/29/360_F_337702919_7HwBkriEpaiCzWUNnGCVKZhJJFKo7gh4.jpg'
+        
+      />
+</div>
+
   
   </div>
     </>

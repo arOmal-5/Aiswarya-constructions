@@ -212,7 +212,6 @@ className='signupinbtn gap-5 justify-center items-center hidden sm:flex'>
         <li className="li md:w-auto w-full text-center md:text-left ">CONSTRUCTION</li>
         <li className="li md:w-auto w-full text-center md:text-left">REAL ESTATE</li>
         <li className="li md:w-auto w-full text-center md:text-left">ESTIMATE</li>
-        <li className="li md:w-auto w-full text-center md:text-left">CONSTRUCTION</li>
         <li className="li md:w-auto w-full text-center md:text-left">SITE SURVEY</li>
         <button
 onClick={handleModalShow}
