@@ -1,11 +1,23 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 import './footer.css'
 import watspicon from '../../public/Assets/whatsappicon.svg'
 import instagramicon from '../../public/Assets/instagram.svg'
 import Image from 'next/image'
 import logo from '../../public/logo.png'
+import axios from 'axios'
 
 const Footer = () => {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    contactNo: '',
+    message: ''
+  });
+
+
+  
 
   const whatsAppNumber = '9633985683'; // Replace with your WhatsApp number in international format
   const message1 = 'Hello, I would like to chat with you on WhatsApp!'; // Replace with your desired message
@@ -17,6 +29,35 @@ const Footer = () => {
   const instagramLink = `https://instagram.com/${instagramHandle}/?utm_medium=copy_link&text=${encodeURIComponent(message2)}`;
 
   const whatsAppLink = `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message1)}`;
+
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    try {
+      const response = await axios.post('http://localhost:3001/api/messages', formData);
+
+      if (response.status === 201) {
+        // Handle success
+        alert('Form submitted successfully');
+        // Optionally, clear the form
+        setFormData({ name: '', contactNo: '', message: '' });
+      } else {
+        // Handle error
+        console.log({message:'Error submitting form',response});
+      }
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
   return (
     <>
 
@@ -82,26 +123,44 @@ const Footer = () => {
 
         <div class="form bg-white text-xs md:w-5/6 ">
        <p className='py-2'> Have Questions? We'd love to help!</p>
-  <form>
-    <div className='flex gap-2'>
-    <div class="mb-5">
-    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
-    <input type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John Martin" required />
-  </div>
-  <div class="mb-5">
-    <label for="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Number</label>
-    <input type="number" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+91 6238739229" required />
-  </div>
-    </div>
-   
-    
-
-  <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
-  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
-
-
-    <button class="letstalkbtn" type="submit">Let's Talk</button>
-  </form>
+       <form onSubmit={handleSubmit}>
+      <div className='flex gap-2'>
+        <div className="mb-5">
+          <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="John Martin"
+            required
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-5">
+          <label htmlFor="contactNo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Number</label>
+          <input
+            type="number"
+            id="contactNo"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="+91 6238739229"
+            required
+            value={formData.contactNo}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+      <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
+      <textarea
+        id="message"
+        rows="4"
+        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="Leave a comment..."
+        value={formData.message}
+        onChange={handleChange}
+      />
+      <button className="letstalkbtn" type="submit">Let's Talk</button>
+    </form>
 </div>
 
       

@@ -27,7 +27,7 @@ const Page = () => {
 
     // Check if the credentials are correct
     if (email === 'user@gmail.com' && password === '123456') {
-      toast.success('Invalid email or password', {
+      toast.success('Admin Login successfull', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
