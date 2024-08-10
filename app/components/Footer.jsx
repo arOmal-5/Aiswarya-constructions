@@ -7,6 +7,7 @@ import instagramicon from '../../public/Assets/instagram.svg'
 import Image from 'next/image'
 import logo from '../../public/logo.png'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 
 
@@ -51,7 +52,7 @@ const Footer = () => {
 
       if (response.status === 201) {
         // Handle success
-        alert('Form submitted successfully');
+        toast.success('Form submitted successfully!');
         // Optionally, clear the form
         setFormData({ name: '', contactNo: '', message: '' });
       } else {
