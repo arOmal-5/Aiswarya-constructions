@@ -8,6 +8,9 @@ import Image from 'next/image'
 import logo from '../../public/logo.png'
 import axios from 'axios'
 
+
+
+
 const Footer = () => {
 
   const [formData, setFormData] = useState({
@@ -17,7 +20,8 @@ const Footer = () => {
   });
 
 
-  
+  const SERVER_REMOTE ="https://aiswarya-server-node.onrender.com"
+  const SERVER_LOCAL ="http://localhost:3001"
 
   const whatsAppNumber = '9633985683'; // Replace with your WhatsApp number in international format
   const message1 = 'Hello, I would like to chat with you on WhatsApp!'; // Replace with your desired message
@@ -43,7 +47,7 @@ const Footer = () => {
     event.preventDefault();
     
     try {
-      const response = await axios.post('http://localhost:3001/api/messages', formData);
+      const response = await axios.post(`${SERVER_LOCAL}/api/messages`, formData);
 
       if (response.status === 201) {
         // Handle success

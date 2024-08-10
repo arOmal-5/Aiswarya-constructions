@@ -5,12 +5,17 @@ import axios from 'axios'
 import Image from 'next/image'
 import avatarImg from '../../../public/Assets/avatar.png'
 
+
+
 const Page = () => {
   const [messages, setMessages] = useState([]);
 
+  const SERVER_REMOTE ="https://aiswarya-server-node.onrender.com"
+  const SERVER_LOCAL ="http://localhost:3001"
+
   const fetchMessages = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/messages');
+      const response = await axios.get(`${SERVER_REMOTE}/api/messages`);
       setMessages(response.data);
     } catch (error) {
       console.error("Error fetching messages:", error);

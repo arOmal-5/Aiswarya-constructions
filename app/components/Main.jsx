@@ -10,6 +10,7 @@ import {Pacifico} from "next/font/google";
 import { useSpring, animated } from '@react-spring/web'
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
 
+
 const pacifico = Pacifico({
   subsets: ["latin"],
   weight: "400", // Add the weight specification
