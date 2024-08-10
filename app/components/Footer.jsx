@@ -47,7 +47,7 @@ const Footer = () => {
     event.preventDefault();
     
     try {
-      const response = await axios.post(`${SERVER_LOCAL}/api/messages`, formData);
+      const response = await axios.post(`${SERVER_REMOTE}/api/messages`, formData);
 
       if (response.status === 201) {
         // Handle success
